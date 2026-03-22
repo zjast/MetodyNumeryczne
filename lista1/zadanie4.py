@@ -16,7 +16,6 @@ roznica = np.abs(y1 - y2)
 
 plt.figure(figsize=(10, 5))
 plt.plot(przedzial, roznica, color='red', linewidth=0.8)
-plt.title('Błąd numeryczny')
 plt.xlabel('x')
 plt.ylabel('roznica')
 plt.grid(True, alpha=0.3)

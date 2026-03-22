@@ -17,7 +17,6 @@ print(f"({y1}, {y2}), roznica: {roznica}")
 
 plt.figure(figsize=(10, 5))
 plt.plot(zbior_x, roznica)
-plt.title('Błąd numeryczny')
 plt.xlabel('x')
 plt.ylabel('błąd')
 plt.grid(True, alpha=0.3)
