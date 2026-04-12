@@ -23,14 +23,14 @@ def trzeci(n):
 # Sposób 4.
 def czwarty(n):
     lista = [1/i**2 for i in range(1, n+1)]
-    heapq.heapify(lista)
-    while len(lista)>1:
-        pierwszy = heapq.heappop(lista)
-        drugi = heapq.heappop(lista)
+    kopiec = lista
+    heapq.heapify(kopiec)
+    while len(kopiec)>1:
+        pierwszy = heapq.heappop(kopiec)
+        drugi = heapq.heappop(kopiec)
         suma = pierwszy + drugi
-        heapq.heappush(lista, suma)
-    return lista[0]
-
+        heapq.heappush(kopiec, suma)
+    return kopiec[0]
 
 n = 10**6
 wynik1 = pierwszy(n)

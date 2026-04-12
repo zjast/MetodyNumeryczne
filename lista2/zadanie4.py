@@ -2,17 +2,27 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.interpolate import lagrange
 
-x = np.linspace(-1, 1, 21)
-y = 1/(1+25*x**2)
+x = np.linspace(-1, 1, 500)
 
-wielomian = lagrange(x,y)
+def funkcja(x):
+    return 1/(1 + 25*x**2)
+y = funkcja(x)
 
-x_wykres = np.linspace(-1,1, 500)
-y_wykres = 1/(1+25*x_wykres**2)
-y_inter = wielomian(x_wykres)
+stopnie = range(2, 21, 2)
 
-plt.plot(x_wykres, y_wykres, label = "y=1/(1+25x^2)")
-plt.plot(x_wykres, y_inter, label = "interpolacja")
+plt.figure(figsize=(12,8))
+plt.plot(x, y, label = "y=1/(1+25x^2)", color = "black", lw = 3)
+
+for n in stopnie:
+    x_nodes = np.linspace(-1, 1, n+1)
+    y_nodes = funkcja(x_nodes)
+    wielomian = lagrange(x_nodes, y_nodes)
+    y_iter = wielomian(x)
+    plt.plot(x, y_iter, label = f"stopień {n}", alpha = 0.6)
+
 plt.legend()
+plt.xlabel("x")
+plt.ylabel("y")
 plt.grid(True)
+plt.ylim(-1,5)
 plt.show()
