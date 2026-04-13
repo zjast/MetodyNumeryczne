@@ -8,7 +8,7 @@ def funkcja(x):
     return 1/(1 + 25*x**2)
 y = funkcja(x)
 
-stopnie = range(2, 21, 2)
+stopnie = range(1, 21)
 
 plt.figure(figsize=(12,8))
 plt.plot(x, y, label = "y=1/(1+25x^2)", color = "black", lw = 3)
