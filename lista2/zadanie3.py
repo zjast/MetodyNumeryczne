@@ -10,7 +10,7 @@ stopnie = range(2, 21)
 plt.figure(figsize=(12,8))
 plt.plot(x, y, label = "y = |x|", color = "black", lw = 3)
 
-for i, n in enumerate(stopnie):
+for n in stopnie:
     x_nodes = np.linspace(-1, 1, n+1)
     y_nodes = np.abs(x_nodes)
     wielomian = lagrange(x_nodes, y_nodes)
