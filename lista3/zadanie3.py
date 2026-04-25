@@ -18,7 +18,6 @@ for n, kolor in zip(punkty_kratowe, colors):
     y_wart = f_sklejana(x)
     plt.plot(x, y_wart, label = f"Wielomian sklejany dla {n} wezłów", color = kolor, lw = 1, alpha = 0.7)
 
-plt.legend()
 plt.xlabel("x")
 plt.ylabel("y")
 plt.grid(True)
