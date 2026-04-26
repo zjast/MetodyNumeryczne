@@ -1,11 +1,16 @@
 import numpy as np
 
-n = 250
+n = 500
 A = np.random.rand(n,n)
 A[-1, :] = np.sum(A[:-1, :], axis=0) + 1e-15
+# A = A*1e+11
+
 x = np.ones(n)
 b = np.dot(A, x)
-sol = np.linalg.solve(A, b)
-r = np.dot(A, sol) - b
+calc = np.linalg.solve(A, b)
+r = np.dot(A, calc) - b
+norma_r = np.linalg.norm(r)
+print(norma_r)
 
-print(f"{np.linalg.norm(r):.2e}")
+blad = np.linalg.norm(x - calc)
+print(blad)

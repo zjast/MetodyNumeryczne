@@ -12,5 +12,5 @@ B = np.array([[2, 1, 2, 1],
 
 det_A = np.linalg.det(A)
 det_B = np.linalg.det(B)
-print(det_A)
-print(det_B)
+print(round(det_A, 2))
+print(round(det_B, 2))
