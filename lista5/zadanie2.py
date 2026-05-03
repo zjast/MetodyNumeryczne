@@ -20,7 +20,7 @@ if __name__ == "__main__":
          [-3,  8,  2],
          [-2,  1,  4]]
 
-    b = [8, -11, -3]
+    b = [2, 19, 12]
     sprawdzenie = np.linalg.solve(A, b)
     print(sprawdzenie)
     wyniki = jacobi(A, b, 16)

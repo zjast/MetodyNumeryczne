@@ -19,13 +19,15 @@ def gauss(A, b):
     return x
 
 if __name__ == "__main__":
-    A = [[ 2,  1, -1],
-         [-3, -1,  2],
-         [-2,  1,  2]]
-    
-    b = [8, -11, -3]
+    A = [[ 3,  1, -1],
+         [-3,  8,  2],
+         [-2,  1,  4]]
+
+    b = [2, 19, 12]
     wyniki = gauss(A, b)
-    print(A)
+    # print(A)
+    sprawdzenie = np.linalg.solve(A, b)
+    print(sprawdzenie)
     print(wyniki)
 
 
