@@ -3,14 +3,15 @@ import numpy as np
 n = 500
 A = np.random.rand(n,n)
 A[-1, :] = np.sum(A[:-1, :], axis=0) + 1e-15
-# A = A*1e+11
+# A = A*1e11
 
 x = np.ones(n)
-b = np.dot(A, x)
+b = A @ x
 calc = np.linalg.solve(A, b)
-r = np.dot(A, calc) - b
+r = A @ calc - b
 norma_r = np.linalg.norm(r)
 print(norma_r)
 
 blad = np.linalg.norm(x - calc)
 print(blad)
+
