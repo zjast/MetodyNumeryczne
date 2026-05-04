@@ -19,16 +19,18 @@ def gauss(A, b):
     return x
 
 if __name__ == "__main__":
-    A = [[ 3,  1, -1],
-         [-3,  8,  2],
-         [-2,  1,  4]]
+    A = np.array([[ 3,  1, -1],
+                  [-3,  8,  2],
+                  [-2,  1,  4]])
 
-    b = [2, 19, 12]
+    b = np.array([2, 19, 12])
     wyniki = gauss(A, b)
-    # print(A)
     sprawdzenie = np.linalg.solve(A, b)
     print(sprawdzenie)
     print(wyniki)
+
+    norma = np.linalg.norm(A @ wyniki - b)
+    print(norma)
 
 
 

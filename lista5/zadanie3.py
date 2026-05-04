@@ -30,10 +30,10 @@ print(f"Wynik Gauss dla macierzy A: {wynik_gauss}, norma: {norma_gauss}")
 
 n = len(b2)
 iteracje = [n, n**2, n**3]
-wynik_wbudowany2 = np.linalg.solve(A_dominujaca, b2)
+wynik_wbudowany2 = np.linalg.solve(A, b2)
 print(f"Wynik dla metody Jacobiego: {wynik_wbudowany2}")
 
 for i in iteracje:
-    wynik_jacobi = jacobi(A_dominujaca.copy(), b2.copy(), i)
-    norma_jacobi = np.linalg.norm(A_dominujaca @ wynik_jacobi - b2)
+    wynik_jacobi = jacobi(A.copy(), b2.copy(), i)
+    norma_jacobi = np.linalg.norm(A @ wynik_jacobi - b2)
     print(f"Wynik Jacobi dla macierzy A po {i} iteracjach: {wynik_jacobi}, norma: {norma_jacobi}")
