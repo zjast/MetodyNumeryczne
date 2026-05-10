@@ -4,7 +4,7 @@ def gauss(A, b):
     n = len(b)
     for i in range(n):
         if A[i][i] == 0:
-            raise ValueError
+            raise ValueError("Na diagonali znajduje się 0")
         for j in range(i+1, n):
             p = A[j][i] / A[i][i]
             for k in range(i, n):
@@ -23,7 +23,7 @@ if __name__ == "__main__":
                   [-3,  8,  2],
                   [-2,  1,  4]])
 
-    b = np.array([2, 19, 12])
+    b = np.array([3, 16, 12])
     wyniki = gauss(A, b)
     sprawdzenie = np.linalg.solve(A, b)
     print(sprawdzenie)

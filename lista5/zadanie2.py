@@ -20,10 +20,10 @@ if __name__ == "__main__":
                   [-3,  8,  2],
                   [-2,  1,  4]])
 
-    b = np.array([2, 19, 12])
+    b = np.array([3, 16, 12])
     sprawdzenie = np.linalg.solve(A, b)
     print(sprawdzenie)
-    wyniki = jacobi(A, b, 16)
+    wyniki = jacobi(A, b, 20)
     print(wyniki)
 
     norma = np.linalg.norm(A @ wyniki - b)
