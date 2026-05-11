@@ -8,7 +8,6 @@ def romberg(funkcja, a, b, n):
         x = np.linspace(a, b, 2**i+1)
         f = funkcja(x)
         T[0, i] = h * (np.sum(f) - 1/2 * (f[0] + f[-1]))
-
     for m in range(1, n+1):
         for i in range(n + 1 - m):
             T[m, i] = T[m-1, i+1] + (T[m-1, i+1] - T[m-1, i])/(4**m - 1)
@@ -28,7 +27,7 @@ for f, stopien in zip(funkcje, stopnie):
 # Zadanie 4.
 funkcja_test = lambda x: np.exp(x)
 a, b = 0, 1
-n = 6
+n = 5
 wynik_dokladny = np.exp(1) - np.exp(0)
 T = romberg(funkcja_test, a, b, n)
 for i in range(1, n+1):
